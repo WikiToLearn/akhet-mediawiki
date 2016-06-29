@@ -1,0 +1,39 @@
+{
+    "name":"Akhet",
+    "version":"0.1.0",
+    "author":[
+        "Luca Toma"
+    ],
+    "url":"https://akhet.cc/",
+    "descriptionmsg":"",
+    "license-name":"GPLv3",
+    "type":"other",
+    "AutoloadClasses":{
+        "Akhet":"Akhet.php",
+        "SpecialAkhet":"includes/SpecialAkhet.php"
+    },
+    "MessagesDirs":{
+        "Akhet":[
+            "i18n"
+        ]
+    },
+  	"config": {
+  		"AjaxExportList": [
+  			"SpecialAkhet::pollingInstance"
+  		]
+    },
+    "SpecialPages": {
+       "Akhet":"SpecialAkhet"
+    },
+    "manifest_version":1,
+    "ResourceFileModulePaths": {
+      "localBasePath": ""
+    },
+    "ResourceModules": {
+      "Akhet.js": {
+          "scripts": [
+              "js/akhet.js"
+          ]
+      }
+    }
+}
