@@ -98,22 +98,22 @@ class SpecialAkhet extends IncludableSpecialPage {
 							$allow_host = false;
 						}
 					}
+					if(isset($akhethost_acl['requirematch'])){
+						$akhethost_requirematch = $akhethost_acl['requirematch'];
+						if(isset($akhethost_requirematch['maildomain'])) {
+							$mail_match = false;
+							$email_explode = explode('@', $user_data->getEmail());
+							$email_domain = array_pop($email_explode);
+							foreach ($akhethost_requirematch['maildomain'] as $req_mail_domain) {
+								$mail_match = $mail_match || ($req_mail_domain == $email_domain);
+							}
+							if(!$mail_match){
+								$allow_host = false;
+							}
+						}
+					}
 				}else{
-					die("Check Akhet settings");
-				}
-			}
-			if(isset($akhethost_acl['requirematch'])){
-				$akhethost_requirematch = $akhethost_acl['requirematch'];
-				if(isset($akhethost_requirematch['maildomain'])) {
-					$mail_match = false;
-					$email_explode = explode('@', $user_data->getEmail());
-					$email_domain = array_pop($email_explode);
-					foreach ($akhethost_requirematch['maildomain'] as $req_mail_domain) {
-						$mail_match = $mail_match || ($req_mail_domain == $email_domain);
-					}
-					if(!$mail_match){
-						$allow_host = false;
-					}
+					$allow_host=false;
 				}
 			}
 		}
