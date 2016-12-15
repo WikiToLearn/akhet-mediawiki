@@ -1,6 +1,6 @@
 [submodule "akhet-php-client"]
 	path = akhet-php-client
-	url = https://github.com/AkhetLab/akhet-php-client.git
+	url = https://github.com/WikiToLearn/akhet-php-client.git
 [submodule "noVNC"]
 	path = noVNC
 	url = https://github.com/kanaka/noVNC
